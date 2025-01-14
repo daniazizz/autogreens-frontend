@@ -73,25 +73,38 @@ function ProductTable() {
   return (
     <TableContainer component={Paper}>
       <Table stickyHeader>
-        <TableHead>
+        {/* table head cell padding small, align items to bottom */}
+        <TableHead sx={{ "& th": { paddingY: "8px", bgcolor: "#f5f5f5" } }}>
           <TableRow>
             <TableCell>
-              <strong>Nom</strong>
+              <Typography variant="h6" fontSize={12} fontWeight={600}>
+                Produit
+              </Typography>
             </TableCell>
             <TableCell align="center">
-              <strong>Cadencier</strong>
+              <Typography variant="h6" fontSize={12} fontWeight={600}>
+                Cadencier
+              </Typography>
             </TableCell>
             <TableCell align="center">
-              <strong>Greenyard</strong>
+              <Typography variant="h6" fontSize={12} fontWeight={600}>
+                Greenyard
+              </Typography>
             </TableCell>
             <TableCell align="center">
-              <strong>Diff</strong>
+              <Typography variant="h6" fontSize={12} fontWeight={600}>
+                Diff
+              </Typography>
             </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {products.map((product, index) => (
-            <TableRow key={index}>
+            <TableRow
+              key={index}
+              // table cell font size small
+              sx={{ "& td": { fontSize: "0.8rem" } }}
+            >
               <TableCell>{product.name}</TableCell>
               <TableCell
                 align="center"
